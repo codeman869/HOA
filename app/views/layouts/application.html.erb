@@ -12,7 +12,8 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %> 
-          <li><%=link_to "Home", "#"%></li>
+          <li><%=link_to "Home", root_url %></li>
+          <li><%= link_to "Pay Dues", new_charge_url%> </li>
           <li><%=link_to "Log out", destroy_user_session_url, method: "delete" %></li>
           <P class="navbar-text">Signed in as <%= "#{current_user.email}" %> </P>
         <% else %>
