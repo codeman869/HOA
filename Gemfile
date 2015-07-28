@@ -46,5 +46,6 @@ group :development, :test do
   
   gem 'bootstrap-sass', '~> 3.3.5'
   
+  gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 end
 
