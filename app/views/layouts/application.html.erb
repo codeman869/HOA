@@ -30,9 +30,15 @@
 <% if notice %>
 <div class="alert alert-success"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%=notice %></div>
 <% end %>
+
+<% if flash[:error] %>
+<div class="alert alert-warning"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%=flash[:error] %></div>
+<% end %>
+
 <% if alert %>
 <div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><%=alert%></div>
 <% end %>
+
 <%= yield %>
 </body>
 </html>
