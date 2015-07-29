@@ -15,7 +15,7 @@
           <li><%=link_to "Home", root_url %></li>
           <li><%= link_to "Pay Dues", new_charge_url%> </li>
           <li><%=link_to "Log out", destroy_user_session_url, method: "delete" %></li>
-          <li><%=link_to "Signed in as #{current_user.email}", edit_user_registration_url %> </P>
+          <li><%=link_to "Signed in as #{current_user.email}", edit_user_registration_url %> </li>
         <% else %>
         <li><%=link_to "Sign up", new_user_registration_url %></li>
         <li><%=link_to "Log in", new_user_session_url%></li>
