@@ -5,4 +5,22 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_one :unit
+  
+  def is_admin?
+    self.role == "Admin"
+  end
+  
+  def is_president?
+    self.role == "President"
+  end
+  
+  def is_treasurer?
+    self.role == "Treasurer"
+  end
+  
+  def is_secretary?
+    self.role == "Secretary"
+  end
+  
+  
 end
