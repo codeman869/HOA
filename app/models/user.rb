@@ -6,19 +6,19 @@ class User < ActiveRecord::Base
          
   has_one :unit
   
-  def is_admin?
+  def admin?
     self.role == "Admin"
   end
   
-  def is_president?
+  def president?
     self.role == "President"
   end
   
-  def is_treasurer?
+  def treasurer?
     self.role == "Treasurer"
   end
   
-  def is_secretary?
+  def secretary?
     self.role == "Secretary"
   end
   
