@@ -30,7 +30,8 @@
             <td><%= "Yes" unless user.locked_at == nil %></td>
             <td><%=user.role%></td>
             <td><%=user.unit.address%></td>
-            <td>Buttons go here</td>
+            <td><a href="<%= edit_user_path(user)%>" class="btn btn-default">
+                <span class="glyphicon glyphicon-pencil"></span></a></td>
         </tr>
     <% end %>
 </table>
