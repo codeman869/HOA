@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:create, :new]
   
   scope '/admin' do 
-    resources :users, only: [:index, :edit]
+    resources :users, only: [:index, :edit, :update]
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
