@@ -1,12 +1,12 @@
-<h1>Modify User</h1>
+<h1>Modify User <%=@user.email%></h1>
 
-<% form_for @user do |f| %>
+<%= form_for @user do |f| %>
 
-<%= f.text_field :email, :placeholder => "Email" %>
+<P><%= f.text_field :email %></P>
 
-<%=f.text_field :role, :placeholder => "Role" %>
+<P><%=f.text_field :role %></P>
 
-<%=f.submit "Update User", :class => "btn btn-primary" %>
+<P><%=f.submit "Update User", :class => "btn btn-primary" %></P>
 
 
 <% end %>
