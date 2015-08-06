@@ -29,4 +29,11 @@ class UserTest < ActiveSupport::TestCase
     assert_respond_to(tom, :secretary?)
   end
   
+  test "If user is destroyed, unit should remain" do
+    fred = users(:fred)
+    fred.destroy()
+    assert_not_nil(units(:two))
+  end
+  
+  
 end

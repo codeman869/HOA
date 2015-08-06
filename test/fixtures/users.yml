@@ -7,6 +7,10 @@
 tom: 
     email: tom@test-domain.com
     encrypted_password: Password
+fred:
+    email: fred@test-domain.com
+    encrypted_password: Password
+    
 # column: value
 #
 #two: {}
