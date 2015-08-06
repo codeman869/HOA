@@ -9,16 +9,24 @@ class UserTest < ActiveSupport::TestCase
     assert_not me.save, "User saved without an email"
   end
   
-  test "Emails should be unique" do
-    
-      tom = User.new(:email =>"tom@test-domain.com", :encrypted_password => "password")
-      tom.save
-      fred = User.new(:email => "tom@test-domain.com", :encrypted_password => "password2")
-      assert_not fred.save, "User saved with the same email address"
-      
-    
-    
+  test "User model should respond to admin role queries" do
+    tom = users(:tom)
+    assert_respond_to(tom, :admin?)
   end
   
+  test "User model should respond to president role queries" do
+    tom = users(:tom)
+    assert_respond_to(tom, :president?)
+  end
+  
+   test "User model should respond to treasurer role queries" do
+    tom = users(:tom)
+    assert_respond_to(tom, :treasurer?)
+  end
+  
+   test "User model should respond to secretary role queries" do
+    tom = users(:tom)
+    assert_respond_to(tom, :secretary?)
+  end
   
 end
