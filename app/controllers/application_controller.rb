@@ -4,19 +4,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def require_admin
-    redirect_to root_url unless current_user && current_user.admin?
+    redirect_to root_url unless user_signed_in? && current_user.admin?
   end
   
   def require_president
-    redirect_to root_url unless current_user.president?
+    redirect_to root_url unless user_signed_in? && current_user.president?
   end
   
   def require_treas
-    redirect_to root_url unless current_user.treasurer?
+    redirect_to root_url unless user_signed_in? && current_user.treasurer?
   end
   
   def require_secretary
-    redirect_to root_url unless current_user.secretary?
+    redirect_to root_url unless user_signed_in? && current_user.secretary?
   end
   
   
