@@ -29,7 +29,7 @@
             <td><%= user.failed_attempts %></td>
             <td><%= "Yes" unless user.locked_at == nil %></td>
             <td><%=user.role%></td>
-            <td><%=user.unit.address%></td>
+            <td><%=user.unit.address unless user.unit == nil%></td>
             <td><a href="<%= edit_user_path(user)%>" class="btn btn-default">
                 <span class="glyphicon glyphicon-pencil"></span></a></td>
         </tr>
