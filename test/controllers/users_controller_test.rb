@@ -26,6 +26,12 @@ class UsersControllerTest < ActionController::TestCase
     assert_response(:success)
   end
   
-  
+  test "Editing a user initiates an instance variable" do
+      sign_in users(:frank)
+      get :edit, {:id => users(:tom).id}
+      assert_response :success
+      assert_not_nil assigns[:user]
+      
+  end
   
 end
