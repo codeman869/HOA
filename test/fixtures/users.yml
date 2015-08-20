@@ -14,6 +14,10 @@ frank:
     email: admin_user@test-domain.com
     encrypted_password: Password2
     role: Admin
+pres:
+    email: president@test-domain.com
+    encrypted_password: Password3
+    role: President
 # column: value
 #
 #two: {}
