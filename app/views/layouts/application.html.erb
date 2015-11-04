@@ -18,7 +18,9 @@
           <li><%=link_to "Home", root_url %></li>
           <li><%= link_to "Pay Dues", new_charge_url%> </li>
           <% if current_user.admin? %>
-          <li><%= link_to 'User Administration', "#" %></li>
+          <li><%= link_to 'User Administration', users_url %></li>
+          <% elsif current_user.president? %>
+          <li><%= link_to 'Unit Administration', units_url %></li>
           <% end %>
           <li><%=link_to "Log out", destroy_user_session_url, method: "delete" %></li>
           <li><%=link_to "Signed in as #{current_user.email}", edit_user_registration_url %> </li>
