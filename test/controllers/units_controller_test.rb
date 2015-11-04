@@ -22,4 +22,17 @@ class UnitsControllerTest < ActionController::TestCase
     assert_response(:success)
   end
   
+  test "Users with the president role can edit a unit" do
+    sign_in users(:pres)
+    get :edit, {:id => units(:two).id} 
+    assert_response(:success)
+    
+  end
+  
+  test "Users without the president role cannot edit a unit" do
+    sign_in users(:frank)
+    get :edit, {:id => units(:two).id}
+    assert_response(:redirect)
+  end
+  
 end
