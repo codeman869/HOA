@@ -12,5 +12,6 @@ class UnitsController < ApplicationController
     
     def edit
        @unit = Unit.find(params[:id]) 
+       @users = User.all
     end
 end

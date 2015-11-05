@@ -1,1 +1,16 @@
-<h1>You're viewing unit <%=@unit.id%></h1>
+<h1><%=@unit.address%></h1>
+
+<p>Current Owner: <% if @unit.user != nil %>
+<%= @unit.user.email %>
+<% else %>
+None
+<% end %></p>
+
+<%= form_for @unit do |f| %>
+<P><%= f.label "Change Owner:" %></P>
+<P><%= f.collection_select :user_id, User.order(:email), :id, :email, include_blank: true %></P>
+<P><%= f.label "Current Dues: $#{@unit.dues}"%></P>
+
+
+
+<% end %>
