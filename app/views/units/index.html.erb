@@ -12,7 +12,11 @@
     </thead>
     <% @units.each do |unit| %>
         <tr>
+            <%if unit.user != nil %>
             <td><%=unit.user.email %></td>
+            <% else %>
+            <td>None</td>
+            <% end %>
             <td><%=unit.address %></td>
             <td><%=unit.dues %></td>
             <td><a href="<%= edit_unit_path(unit)%>" class="btn btn-default">
