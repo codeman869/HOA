@@ -10,7 +10,7 @@ None
 <P><%= f.label "Change Owner:" %></P>
 <P><%= f.collection_select :user_id, User.order(:email), :id, :email, include_blank: true %></P>
 <P><%= f.label "Current Dues: $#{@unit.dues}"%></P>
-
+<p><%= f.submit "Update Unit", :class => "btn btn-primary" %></p>
 
 
 <% end %>
